@@ -17,31 +17,31 @@
       <mass value="10.0"/>
       <origin xyz="0 0.3 0" rpy=" 0 0 0"/>
       <inertia
-          ixx="1.0" ixy="0" ixz="0"
-          iyy="1.0" iyz="0"
-          izz="1.0"
+          ixx="0.1" ixy="0" ixz="0"
+          iyy="0.1" iyz="0"
+          izz="0.1"
       />
     </inertial>
 
     <collision name='collision'>
      <geometry>
-        <box size="1 1.5 0.2"/>
+        <box size=".8 1.2 0.15"/>
       </geometry>
     </collision>
 
     <visual name='chassis_visual'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
      <geometry>
-        <box size="1 1.5 0.2"/>
+        <box size=".8 1.2 0.15"/>
       </geometry>
     </visual>
 
 <!-- -->
 
     <collision name='caster_collision1'>
-      <origin xyz="0 -0.5 -0.1" rpy=" 0 0 0"/>
+      <origin xyz="0 -0.4 -0.1" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.2"/>
+        <sphere radius="0.15"/>
       </geometry>
       <surface>
         <friction>
@@ -56,17 +56,17 @@
     </collision>
 
     <visual name='caster_visual1'>
-      <origin xyz="0 -0.5 -0.1" rpy=" 0 0 0"/>
+      <origin xyz="0 -0.4 -0.1" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.2"/>
+        <sphere radius="0.15"/>
       </geometry>
     </visual>
   
 
     <collision name='caster_collision2'>
-      <origin xyz="0 0.5 -0.1" rpy=" 0 0 0"/>
+      <origin xyz="0 0.4 -0.1" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.2"/>
+        <sphere radius="0.15"/>
       </geometry>
       <surface>
         <friction>
@@ -81,9 +81,9 @@
     </collision>
 
     <visual name='caster_visual2'>
-      <origin xyz="0 0.5 -0.1" rpy=" 0 0 0"/>
+      <origin xyz="0 0.4 -0.1" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.2"/>
+        <sphere radius="0.15"/>
       </geometry>
     </visual>
   </link>
@@ -147,7 +147,7 @@
     <parent link="chassis"/>
     <axis xyz="1 0 0" rpy="0 0 0"/>
     <limit effort="100" velocity="100"/>
-    <joint_properties damping="0.0" friction="0.0"/>
+    <joint_properties damping="1.0" friction="1.0"/>
   </joint>
 
   <joint type="continuous" name="right_wheel_hinge">
@@ -157,7 +157,7 @@
     <parent link="chassis"/>
     <axis xyz="1 0 0" rpy="0 0 0"/>
     <limit effort="100" velocity="100"/>
-    <joint_properties damping="0.0" friction="0.0"/>
+    <joint_properties damping="1.0" friction="1.0"/>
   </joint>
 
 <!--   camera  -->
