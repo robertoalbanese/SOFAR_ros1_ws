@@ -1,0 +1,39 @@
+RIMUOVERE GAZEBO 7 E pkgs PRECEDENTI  
+  sudo apt remove gazebo7 gazebo7-common gazebo7-plugin-base
+
+  sudo apt remove --purge ros-kinetic-gazebo-ros ros-kinetic-gazebo-ros-pkgs
+
+installare gazebo9 per kinetic (https://github.com/gsilano/BebopS) (già messo da Riky) 
+
+INOLTRE PRIMA DI CONCLUDERE RENDENDO COMPATIBILE Gazebo 9 con Kinetic (spiegato nel tutorial) lanciare 
+
+  sudo apt install ros-kinetic-position-controllers ros-kinetic-effort-controllers ros-kinetic-joint-trajectory-controller ros-kinetic-robot-state-publisher
+
+  sudo apt-get install libeigen3-dev ros-kinetic-image-view ros-kinetic-parrot-arsdk libprotobuf-dev libprotoc-dev ros-kinetic-joy-teleop ros-kinetic-nav-msgs ros-kinetic-mav-msgs libyaml-cpp-dev ros-kinetic-nodelet ros-kinetic-mav-planning-msgs ros-kinetic-urdf ros-kinetic-image-transport ros-kinetic-roslint ros-kinetic-angles ros-kinetic-cv-bridge ros-kinetic-tf2-geometry-msgs ros-kinetic-xacro ffmpeg libavcodec-dev libavformat-dev libavutil-dev libswscale-dev ros-kinetic-camera-info-manager ros-kinetic-cmake-modules ros-kinetic-gazebo-msgs ros-kinetic-mavros-msgs ros-kinetic-control-toolbox ros-kinetic-mav-msgs ros-kinetic-libmavconn ros-kinetic-mavros ros-kinetic-octomap-msgs ros-kinetic-geographic-msgs ros-kinetic-mavlink ros-kinetic-mavros-extras ros-kinetic-mav-planning-msgs ros-kinetic-joy
+
+INSTALLARE gazebo_ros_packages
+
+tutorial (http://gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros) modificato da me sotto per farlo andare anche per gazebo9. Quindi seguirlo e sostiruire i comandi da me modificati o aggiunti sotto.
+
+  sudo apt-get install -y libgazebo9-dev 
+ 
+	FARE IL CLONE DENTRO LO WORKSPACE DOVE SI VUOLE USARE LA SIMULAZIONE!!
+  
+  git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git
+
+  {  NON SO SE QUESTA PARTE SIA ESSENZIALE PERÒ NON CREDO CI SIANO PROBLEMI NEL FARLA, quindi fate
+
+  rosdep update
+  rosdep check --from-paths . --ignore-src --rosdistro kinetic 
+
+ (ci saranno delle missing dependendencies, fare il check che siano solo verso gazebo 7)
+
+  rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
+  
+  }
+
+  catkin_make (nello workspace dove si è fatto il git clone) 
+ 
+  source /opt/ros/kinetic/setup.bash
+
+
