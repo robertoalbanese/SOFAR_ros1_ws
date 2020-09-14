@@ -29,7 +29,6 @@ Loading the Map (load a previous map for SLAM)
 
 - run_rviz.sh ( far navigare il robot usando 2D NAV GOAL )
 
-BISOGNA SISTEMARE LE MASSE E LE DIMENSIONI DELL ORTHOPILLAR PERCHÈ È UNA CALESSINO e NON RISPONDE BENE AI COMANDI, CREDO GLI MANCHINO QUALCHE JOINT (?) ----> DA RISOLVERE
-LA NAVIGAZIONE FA UN PO CAGARE MA PER ADESSO L IMPORTANTE FUNZIONI la sistemiamo direttamente su rOS2
+*TO FIX* Dimension and physics properties of the Robot Model
 
 
